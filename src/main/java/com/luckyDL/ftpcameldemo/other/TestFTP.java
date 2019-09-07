@@ -7,10 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * @author weid
@@ -27,9 +24,12 @@ public class TestFTP {
     public void test1() {
         try {
             InputStream inputStream = new FileInputStream(new File("E:\\upload\\timg.jpg"));
-            ftpClientService.uploadFile(inputStream, "000.jpg", "./");
-//            ftpClientService.readFileToBase64("GuarantyInfo_20190826.txt","/mytest");
+//            ftpClientService.uploadFile(inputStream, "000.jpg", "./");
+            ftpClientService.readFile("/mytest");
+
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

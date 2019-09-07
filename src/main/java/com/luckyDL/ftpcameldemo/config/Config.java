@@ -24,6 +24,7 @@ import java.net.SocketException;
 public class Config {
     @Autowired
     private ApplicationEntity applicationEntity;
+
     @Bean
     public FTPClient ftpClient(){
 //        BeansEntity beansEntity =new BeansEntity();

@@ -1,5 +1,6 @@
 package com.luckyDL.ftpcameldemo.other;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 /**
@@ -9,6 +10,8 @@ import java.io.InputStream;
 public interface FTPClientService {
 
     String readFileToBase64(String remoteFileName, String remoteDir);
+
+    String readFile(String remoteDir) throws IOException;
 
     void download(String remoteFileName, String localFileName, String remoteDir);
 
